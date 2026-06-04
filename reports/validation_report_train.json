@@ -1,0 +1,116 @@
+{
+  "name": "02_train",
+  "checks": [
+    {
+      "check": "shape",
+      "status": "PASS",
+      "message": "(12989, 142), features=130"
+    },
+    {
+      "check": "time_order_no_shuffle",
+      "status": "PASS",
+      "message": "index sorted ascending (no shuffle)"
+    },
+    {
+      "check": "targets_valid",
+      "status": "PASS",
+      "message": "labels subset of (-1, 0, 1); present=[np.int64(-1), np.int64(0), np.int64(1)]"
+    },
+    {
+      "check": "no_missing_in_X",
+      "status": "PASS",
+      "message": "no NaN in feature matrix"
+    },
+    {
+      "check": "chrono_split_order",
+      "status": "PASS",
+      "message": "train.end < val.start < test.start"
+    },
+    {
+      "check": "chrono_no_overlap",
+      "status": "PASS",
+      "message": "no index overlap across splits"
+    },
+    {
+      "check": "purged_cv_no_overlap",
+      "status": "PASS",
+      "message": "no train/test horizon overlap in any fold"
+    },
+    {
+      "check": "primary_proba_valid",
+      "status": "PASS",
+      "message": "proba shape (1949, 3), rows sum~1, all in [0,1]"
+    },
+    {
+      "check": "primary_metrics_finite",
+      "status": "PASS",
+      "message": "test metrics finite"
+    },
+    {
+      "check": "SMOKE_test_accuracy",
+      "status": "PASS",
+      "message": "test accuracy=0.455 within realistic ceiling (<= 0.65)"
+    },
+    {
+      "check": "SMOKE_test_auc",
+      "status": "PASS",
+      "message": "test AUC=0.544 within realistic ceiling (<= 0.65)"
+    },
+    {
+      "check": "calibration_proba_valid",
+      "status": "PASS",
+      "message": "proba shape (1949, 3), rows sum~1, all in [0,1]"
+    },
+    {
+      "check": "calibration_logloss",
+      "status": "PASS",
+      "message": "val log-loss 0.9057 -> 0.7232"
+    },
+    {
+      "check": "meta_no_label_leak",
+      "status": "PASS",
+      "message": "no label / future columns in feature set"
+    },
+    {
+      "check": "meta_proba_valid",
+      "status": "PASS",
+      "message": "proba shape (1948, 2), rows sum~1, all in [0,1]"
+    },
+    {
+      "check": "meta_metrics_finite",
+      "status": "PASS",
+      "message": "meta metrics finite"
+    },
+    {
+      "check": "SMOKE_meta_auc",
+      "status": "PASS",
+      "message": "meta test AUC=0.460 within realistic ceiling (<= 0.75)"
+    },
+    {
+      "check": "regime_enough_samples",
+      "status": "PASS",
+      "message": "each regime has >=20 samples"
+    },
+    {
+      "check": "regime_is_risk_only",
+      "status": "PASS",
+      "message": "regime used for sizing only; never flips signal direction"
+    },
+    {
+      "check": "artifacts_reload_predict",
+      "status": "PASS",
+      "message": "primary reloaded and predicted on a sample"
+    },
+    {
+      "check": "feature_columns_match",
+      "status": "PASS",
+      "message": "feature_columns (130) == model n_features_in_ (130)"
+    }
+  ],
+  "summary": {
+    "total": 21,
+    "pass": 21,
+    "fail": 0,
+    "warn": 0
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "backend": "lightgbm",
+  "periods": {
+    "train": [
+      "2024-03-20 19:00:00+00:00",
+      "2025-10-02 07:00:00+00:00"
+    ],
+    "validation": [
+      "2025-10-02 08:00:00+00:00",
+      "2026-02-02 10:00:00+00:00"
+    ],
+    "test": [
+      "2026-02-02 11:00:00+00:00",
+      "2026-06-02 06:00:00+00:00"
+    ]
+  },
+  "primary_metrics": {
+    "validation": {
+      "accuracy": 0.5241273100616016,
+      "balanced_accuracy": 0.32621973729251547,
+      "f1_macro": 0.31940940033101245,
+      "precision_macro": 0.3218052329487647,
+      "recall_macro": 0.32621973729251547,
+      "n": 1948,
+      "classes": [
+        -1,
+        0,
+        1
+      ],
+      "f1_per_class": {
+        "-1": 0.6350710900473934,
+        "0": 0.0,
+        "1": 0.3231571109456441
+      },
+      "roc_auc_ovr": 0.5589782324132625,
+      "log_loss": 0.9056741583038842,
+      "confusion_matrix": [
+        [
+          804,
+          0,
+          345
+        ],
+        [
+          18,
+          0,
+          3
+        ],
+        [
+          561,
+          0,
+          217
+        ]
+      ]
+    },
+    "test": {
+      "accuracy": 0.45459209851205745,
+      "balanced_accuracy": 0.317900727207258,
+      "f1_macro": 0.2981419495615079,
+      "precision_macro": 0.3125142202230296,
+      "recall_macro": 0.317900727207258,
+      "n": 1949,
+      "classes": [
+        -1,
+        0,
+        1
+      ],
+      "f1_per_class": {
+        "-1": 0.5344749887336638,
+        "0": 0.0,
+        "1": 0.35995085995085996
+      },
+      "roc_auc_ovr": 0.5442027920547345,
+      "log_loss": 0.9989545106973439,
+      "confusion_matrix": [
+        [
+          593,
+          0,
+          724
+        ],
+        [
+          21,
+          0,
+          29
+        ],
+        [
+          288,
+          1,
+          293
+        ]
+      ]
+    }
+  },
+  "meta_metrics_test": {
+    "accuracy": 0.4671457905544148,
+    "balanced_accuracy": 0.47202620845518517,
+    "f1_macro": 0.45366472596558616,
+    "precision_macro": 0.47562542258282625,
+    "recall_macro": 0.47202620845518517,
+    "n": 1948,
+    "classes": [
+      0,
+      1
+    ],
+    "f1_per_class": {
+      "0": 0.36784409257003653,
+      "1": 0.5394853593611357
+    },
+    "roc_auc_ovr": 0.4596239930550504,
+    "log_loss": 1.1748670718613865,
+    "confusion_matrix": [
+      [
+        302,
+        320
+      ],
+      [
+        718,
+        608
+      ]
+    ]
+  },
+  "class_distribution": {
+    "-1": 8038,
+    "0": 203,
+    "1": 4748
+  },
+  "top_features": [
+    {
+      "feature": "hurst_100",
+      "importance": 767.0
+    },
+    {
+      "feature": "entropy_50",
+      "importance": 760.0
+    },
+    {
+      "feature": "ret_autocorr_20",
+      "importance": 754.0
+    },
+    {
+      "feature": "H4_adx_14",
+      "importance": 708.0
+    },
+    {
+      "feature": "adx_14",
+      "importance": 668.0
+    },
+    {
+      "feature": "ret_skew_20",
+      "importance": 644.0
+    },
+    {
+      "feature": "bb_width",
+      "importance": 634.0
+    },
+    {
+      "feature": "ret_log_5",
+      "importance": 609.0
+    },
+    {
+      "feature": "H4_hurst_100",
+      "importance": 604.0
+    },
+    {
+      "feature": "ret_kurt_20",
+      "importance": 581.0
+    },
+    {
+      "feature": "H4_bb_width",
+      "importance": 577.0
+    },
+    {
+      "feature": "garman_klass_14",
+      "importance": 558.0
+    },
+    {
+      "feature": "ret_std_50",
+      "importance": 553.0
+    },
+    {
+      "feature": "ret_mean_50",
+      "importance": 546.0
+    },
+    {
+      "feature": "D1_bb_width",
+      "importance": 532.0
+    },
+    {
+      "feature": "ret_std_20",
+      "importance": 512.0
+    },
+    {
+      "feature": "H4_ret_std_20",
+      "importance": 507.0
+    },
+    {
+      "feature": "ret_std_10",
+      "importance": 502.0
+    },
+    {
+      "feature": "H4_ret_std_10",
+      "importance": 495.0
+    },
+    {
+      "feature": "H4_ret_log_1",
+      "importance": 493.0
+    }
+  ],
+  "params": "robust defaults",
+  "calibration": {
+    "method": "sigmoid",
+    "val_logloss_before": 0.9056741583038842,
+    "val_logloss_after": 0.7231850819273927
+  },
+  "regime_lib": "hmmlearn.GaussianHMM",
+  "realistic_ceiling_note": "OOS accuracy ~51-55%, AUC ~0.5 is expected & fine; >0.65 \u21d2 suspect leakage.",
+  "leakage_smoke_test": {
+    "test_accuracy": 0.45459209851205745,
+    "test_auc": 0.5442027920547345,
+    "flagged": false
+  },
+  "todo": [
+    "meta on purged-CV OOF primary preds (here: validation-fit)",
+    "optuna tuning (off by default)"
+  ]
+}

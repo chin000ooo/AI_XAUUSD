@@ -1,0 +1,111 @@
+{
+  "name": "01_preprocess",
+  "checks": [
+    {
+      "check": "primary_file_exists",
+      "status": "PASS",
+      "message": "exists: D:\\AI_XAUUSD\\data\\raw\\XAUUSD_H1.csv"
+    },
+    {
+      "check": "ohlc_valid",
+      "status": "PASS",
+      "message": "OHLC consistent across 16,408 rows"
+    },
+    {
+      "check": "time_order",
+      "status": "PASS",
+      "message": "index sorted ascending (no shuffle)"
+    },
+    {
+      "check": "no_dup_timestamp",
+      "status": "PASS",
+      "message": "no duplicate timestamps"
+    },
+    {
+      "check": "no_nan_inf_raw",
+      "status": "PASS",
+      "message": "no NaN / inf in numeric columns"
+    },
+    {
+      "check": "mtf_no_leakage_H4",
+      "status": "PASS",
+      "message": "all 16,404 merged HTF source bars <= primary bar time (no look-ahead)"
+    },
+    {
+      "check": "mtf_no_leakage_D1",
+      "status": "PASS",
+      "message": "all 16,408 merged HTF source bars <= primary bar time (no look-ahead)"
+    },
+    {
+      "check": "feat_dtypes_numeric",
+      "status": "PASS",
+      "message": "129 numeric feature columns; non-numeric: []"
+    },
+    {
+      "check": "no_future_cols_in_features",
+      "status": "PASS",
+      "message": "no label / future columns in feature set"
+    },
+    {
+      "check": "fracdiff",
+      "status": "PASS",
+      "message": "d=0.2, ADF p=0.010944103138218787, corr(close,ffd)=0.977 (memory preserved), method=ADF search (statsmodels)"
+    },
+    {
+      "check": "fracdiff_no_allnan",
+      "status": "PASS",
+      "message": "fracdiff_close produced finite values"
+    },
+    {
+      "check": "labels_valid",
+      "status": "PASS",
+      "message": "labels subset of (-1, 0, 1); present=[np.int64(-1), np.int64(0), np.int64(1)]"
+    },
+    {
+      "check": "event_end_after_start",
+      "status": "PASS",
+      "message": "every event_end_time >= event start"
+    },
+    {
+      "check": "class_imbalance_flag",
+      "status": "WARN",
+      "message": "tp/sl asymmetry -> imbalance {-1:0.62, 1:0.37, 0:0.02}; handle via sample weights / balanced metrics downstream"
+    },
+    {
+      "check": "weights_positive",
+      "status": "PASS",
+      "message": "all sample weights > 0"
+    },
+    {
+      "check": "weights_no_nan",
+      "status": "PASS",
+      "message": "no NaN weights"
+    },
+    {
+      "check": "no_label_in_features",
+      "status": "PASS",
+      "message": "no label / future columns in feature set"
+    },
+    {
+      "check": "final_time_order",
+      "status": "PASS",
+      "message": "index sorted ascending (no shuffle)"
+    },
+    {
+      "check": "final_no_dup",
+      "status": "PASS",
+      "message": "no duplicate timestamps"
+    },
+    {
+      "check": "reload_roundtrip",
+      "status": "PASS",
+      "message": "reloaded (12989, 142) vs in-memory (12989, 142)"
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "pass": 19,
+    "fail": 0,
+    "warn": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "symbol": "XAUUSD",
+  "side": "short",
+  "confidence": 0.5941,
+  "meta_prob": 0.641,
+  "size_lots": 0.03,
+  "sl": 4549.817,
+  "tp": 4499.006,
+  "ts": "2026-06-02 06:00:00+00:00",
+  "schema": "xauusd-signal-v1"
+}

@@ -1,0 +1,72 @@
+{
+  "oos_period": [
+    "2026-02-02 11:00:00+00:00",
+    "2026-06-02 06:00:00+00:00"
+  ],
+  "config": {
+    "sizing": "SizingConfig(initial_capital=10000.0, max_risk_per_trade=0.01, min_primary_confidence=0.5, meta_threshold=0.55, max_exposure_lots=5.0, lot_step=0.01, min_lot=0.01, tp_mult=2.0, sl_mult=1.0, max_holding=24, use_kelly=False, kelly_fraction=0.25, turbulent_regime=2, turbulent_size_mult=0.0)",
+    "cost": "CostConfig(spread_points=20.0, slippage_points=5.0, commission_per_lot=3.5, point=0.01, contract_size=100.0, asian_spread_mult=1.5, asian_hours=(0, 8))",
+    "data_tz": "UTC"
+  },
+  "metrics_oos": {
+    "initial_capital": 10000.0,
+    "final_equity": 9604.486627139091,
+    "total_return": -0.03955133728609095,
+    "years": 0.3279717088751996,
+    "cagr": -0.11577469353702985,
+    "sharpe": -0.17367792979229668,
+    "sortino": -0.18547977293897025,
+    "max_drawdown": -0.18891197492351175,
+    "calmar": -0.6128499455045434,
+    "n_trades": 240,
+    "win_rate": 0.325,
+    "avg_win": 130.29762618878496,
+    "avg_loss": -65.17733466411218,
+    "profit_factor": 0.9625415708421103,
+    "expectancy": -1.6479723869206049,
+    "avg_bars_held": 4.304166666666666,
+    "total_commission": 44.52000000000001,
+    "gross_pnl": -139.5433728613334,
+    "net_pnl": -395.5133728609452,
+    "return_skew": 1.9627760334206346,
+    "return_kurtosis": 25.74080457809063
+  },
+  "metrics_oos_2x_cost": {
+    "initial_capital": 10000.0,
+    "final_equity": 9348.516627138677,
+    "total_return": -0.06514833728613234,
+    "years": 0.3279717088751996,
+    "cagr": -0.18568349970184517,
+    "sharpe": -0.4029240122904909,
+    "sortino": -0.42708763923623616,
+    "max_drawdown": -0.19581607578051952,
+    "calmar": -0.94825462598877,
+    "n_trades": 240,
+    "win_rate": 0.325,
+    "avg_win": 129.19672875288563,
+    "avg_loss": -66.22733466411368,
+    "profit_factor": 0.9392773041220952,
+    "expectancy": -2.7145140535889136,
+    "avg_bars_held": 4.304166666666666,
+    "total_commission": 89.04000000000002,
+    "gross_pnl": -139.5433728613334,
+    "net_pnl": -651.4833728613393,
+    "return_skew": 1.8787704999976351,
+    "return_kurtosis": 25.231840441179624
+  },
+  "deflated_sharpe": {
+    "dsr": 0.4492041126430254,
+    "sr_benchmark": 0.000700905762044982,
+    "observed_sr": -0.0021980671324257728,
+    "n_trials": 9,
+    "note": "DSR = P(true SR > benchmark) after deflating for N trials & non-normality"
+  },
+  "pbo": {
+    "pbo": 0.9714285714285714,
+    "n_configs": 9,
+    "n_splits": 8,
+    "median_logit": -1.3862943611198906,
+    "note": "PBO = P(IS-best config underperforms OOS median); lower is better"
+  },
+  "n_trials": 9
+}

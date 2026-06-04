@@ -1,0 +1,40 @@
+# XAUUSD AI Direction & Signal Engine — Python dependencies
+# Python 3.11 (64-bit) recommended.  Install:  pip install -r requirements.txt
+# Every optional library degrades gracefully (see README §Dependency fallbacks);
+# the core pipeline runs with just the "core" block below.
+
+# ---- core (required) ----
+numpy>=1.24
+pandas>=2.1            # tested with 3.0.3; uses tz-aware ns datetimes + merge_asof
+scipy>=1.10
+scikit-learn>=1.3     # 1.6+ enables FrozenEstimator-based calibration
+pyarrow>=12.0         # parquet IO (CSV fallback if absent)
+matplotlib>=3.7
+tqdm>=4.65
+
+# ---- notebook execution ----
+nbformat>=5.9
+nbconvert>=7.0
+ipykernel>=6.0
+jupyter-client>=8.0
+
+# ---- preferred models / stats (fallbacks exist) ----
+lightgbm>=4.0         # primary GBM; falls back to xgboost > catboost > sklearn HistGBM
+statsmodels>=0.14     # ADF-based fracdiff d search; falls back to default d=0.35
+hmmlearn>=0.3         # regime HMM; falls back to sklearn GaussianMixture
+optuna>=3.4           # optional hyper-param tuning (off by default); robust defaults otherwise
+
+# ---- optional: ONNX deployment bridge (NB03 §11, advanced) ----
+onnx>=1.15
+onnxruntime>=1.16
+skl2onnx>=1.16
+onnxmltools>=1.12
+
+# ---- optional alternative GBM backends (not required) ----
+# xgboost>=2.0
+# catboost>=1.2
+
+# Verified working set (2026-06): numpy 2.4.6, pandas 3.0.3, scipy 1.17.1,
+# scikit-learn 1.9.0, pyarrow 24.0.0, matplotlib 3.10.9, lightgbm 4.6.0,
+# statsmodels 0.14.6, hmmlearn 0.3.3, optuna 4.9.0, onnxruntime 1.26.0,
+# skl2onnx 1.20.0, onnxmltools 1.16.0.

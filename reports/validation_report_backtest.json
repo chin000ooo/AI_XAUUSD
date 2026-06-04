@@ -1,0 +1,111 @@
+{
+  "name": "03_backtest",
+  "checks": [
+    {
+      "check": "models_present",
+      "status": "PASS",
+      "message": "exists: D:\\AI_XAUUSD\\models\\primary_model.pkl"
+    },
+    {
+      "check": "feature_cols_match",
+      "status": "PASS",
+      "message": "feature columns present in dataset"
+    },
+    {
+      "check": "sample_prediction_ok",
+      "status": "PASS",
+      "message": "proba shape (5, 3), rows sum~1, all in [0,1]"
+    },
+    {
+      "check": "signals_no_nan",
+      "status": "PASS",
+      "message": "no NaN in signals"
+    },
+    {
+      "check": "signals_no_future_label",
+      "status": "PASS",
+      "message": "no label / future columns in feature set"
+    },
+    {
+      "check": "size_nonneg",
+      "status": "PASS",
+      "message": "all sizes >= 0"
+    },
+    {
+      "check": "size_within_cap",
+      "status": "PASS",
+      "message": "sizes <= max exposure"
+    },
+    {
+      "check": "regime_filter_applied",
+      "status": "PASS",
+      "message": "turbulent regime 2 size x0.0 (risk control only)"
+    },
+    {
+      "check": "backtest_trades_valid",
+      "status": "PASS",
+      "message": "240 trades; exit>entry; costs deducted; pnl finite"
+    },
+    {
+      "check": "entry_after_signal",
+      "status": "PASS",
+      "message": "engine enters at NEXT bar open (signal from bar t-1); no signal-bar-close entry"
+    },
+    {
+      "check": "equity_no_nan",
+      "status": "PASS",
+      "message": "no NaN in equity"
+    },
+    {
+      "check": "drawdown_nonpos",
+      "status": "PASS",
+      "message": "drawdown <= 0"
+    },
+    {
+      "check": "equity_start_correct",
+      "status": "PASS",
+      "message": "start equity ~ 10000.0"
+    },
+    {
+      "check": "metrics_finite",
+      "status": "PASS",
+      "message": "core metrics computed"
+    },
+    {
+      "check": "dsr_computed",
+      "status": "PASS",
+      "message": "DSR=0.4492041126430254 (N_trials=9)"
+    },
+    {
+      "check": "pbo_computed",
+      "status": "PASS",
+      "message": "PBO=0.9714285714285714 over 9 configs"
+    },
+    {
+      "check": "oos_excludes_train",
+      "status": "PASS",
+      "message": "OOS start 2026-02-02 11:00:00+00:00 > train end 2025-10-02 07:00:00+00:00"
+    },
+    {
+      "check": "robustness_2x_cost",
+      "status": "WARN",
+      "message": "edge FRAGILE under 2x costs (1x=-0.17367792979229668, 2x=-0.4029240122904909)"
+    },
+    {
+      "check": "reports_roundtrip",
+      "status": "PASS",
+      "message": "trades.csv rows 240 == 240"
+    },
+    {
+      "check": "onnx_parity",
+      "status": "PASS",
+      "message": "parity acceptable (max_abs_diff=5.07e-03); small float32 rounding on large-magnitude price-scale features \u2014 scale features for tighter prod parity"
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "pass": 19,
+    "fail": 0,
+    "warn": 1
+  }
+}

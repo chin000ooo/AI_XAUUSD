@@ -1,0 +1,33 @@
+============================================================
+BACKTEST METRICS SUMMARY
+============================================================
+  initial_capital   : 10,000.0000
+  final_equity      : 9,604.4866
+  total_return      : -0.0396
+  cagr              : -0.1158
+  sharpe            : -0.1737
+  sortino           : -0.1855
+  calmar            : -0.6128
+  max_drawdown      : -0.1889
+  profit_factor     : 0.9625
+  win_rate          : 0.3250
+  expectancy        : -1.6480
+  n_trades          : 240
+  avg_bars_held     : 4.3042
+  gross_pnl         : -139.5434
+  net_pnl           : -395.5134
+  total_commission  : 44.5200
+------------------------------------------------------------
+DEFLATED SHARPE RATIO
+  dsr            : 0.4492
+  sr_benchmark   : 0.000700905762044982
+  DSR = P(true SR > benchmark) after deflating for N trials & non-normality
+------------------------------------------------------------
+PROBABILITY OF BACKTEST OVERFITTING
+  pbo            : 0.9714285714285714
+  n_configs      : 9
+  PBO = P(IS-best config underperforms OOS median); lower is better
+------------------------------------------------------------
+robustness 2x-cost Sharpe: -0.4029240122904909
+REALITY: backtest != future profit; demo/paper-trade first; verify broker spread/tz/contract size.
+============================================================

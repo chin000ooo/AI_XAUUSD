@@ -1,0 +1,30 @@
+# virtualenv
+.venv/
+venv/
+env/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# data & model artifacts (large / regenerable — keep out of git)
+data/raw/*.csv
+data/external/*.csv
+data/processed/*.parquet
+data/processed/*.csv
+models/*.pkl
+models/*.onnx
+reports/*.png
+
+# but keep the folder structure
+!data/raw/.gitkeep
+!data/external/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!reports/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
